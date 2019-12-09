@@ -22,6 +22,8 @@ require_once("header.php");
                         ON users.profile_pic_id = images.id";
         $search = (isset($_GET["search"])) ? $_GET["search"] : false;
 
+        $users_where_search = "";
+        
         if ($search) {
             $search_words = explode(" ", $search);
             //explode will seperate a string into an array
@@ -55,11 +57,11 @@ require_once("header.php");
                             <img src="<?php echo $user_row['profile_pic'] ?>" class="card-img-top">
                         </div>
                         <div class="card-header">
-                            <h5 class="pt-5">
+                            <h6 class="pt-5">
                                 <a href="/profile.php?user_id=<?= $user_row["id"]; ?>">
                                     <?= $user_row["first_name"] . " " . $user_row["last_name"] ?>
                                 </a>
-                            </h5>
+                            </h6>
                         </div>
                     </div>
                 </div>

@@ -10593,6 +10593,18 @@ h4 {
   font-weight: 100;
 }
 
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+}
+
 .white-line {
   margin-top: 80px;
   margin-bottom: 20px;
@@ -10664,7 +10676,7 @@ h4 {
 }
 
 .light-btn a {
-  color: white;
+  color: #454545;
   text-decoration: none;
 }
 
@@ -10674,6 +10686,7 @@ h4 {
 
 a {
   text-decoration: none;
+  color: #7e7e7e;
 }
 
 /**********
@@ -10736,6 +10749,10 @@ HERO BANNER
   max-width: 600px;
 }
 
+.med-container {
+  max-width: 800px;
+}
+
 /********
 FOOTER
 ********/
@@ -10750,6 +10767,10 @@ FOOTER
   letter-spacing: 5px;
   font-size: 20px;
   color: #9d9b9b;
+}
+
+.icons:hover {
+  color: white;
 }
 
 /********

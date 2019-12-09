@@ -3,9 +3,19 @@ require_once("header.php");
 ?>
 
 <div class="container">
-    <div class="row pt-5 mt-5">
+    <div class="col-12 pt-5 mt-5">
         <h1>Browse New Designs</h1>
+        
+        <p class="pt-3">Check out the lastest designs, and articles posted by the designers from our site. <br> See something you like? Click the name of the poster to view their full profile, and get in touch!</p>
+        <hr>
+
         <?php
+/*--------------
+*
+*  SINGLE ARTICLES
+*
+----------------*/
+
         if (isset($_GET["id"])) {
 
             $article_query = "SELECT articles.*, 
@@ -58,11 +68,16 @@ require_once("header.php");
                     echo mysqli_error($conn);
                 }
             } else {
-                ?>
-            <div class="col-12 pt-5 mt-5">
-                <h5>All Portfolio Items</h5>
-            </div>
-            <?php
+
+/*--------------
+*
+*  ALL ARTICLES
+*
+----------------*/
+
+                $current_page = (isset($_GET["page"])) ? $_GET["page"] : 1;
+                $limit = 5;
+                $offset = $limit * ($current_page - 1);
 
                 $article_query = "SELECT articles.title, images.url AS featured_image, articles.author_id, 
                                      users.first_name, users.last_name, articles.date_created, articles.id
@@ -71,9 +86,41 @@ require_once("header.php");
                               ON articles.image_id = images.id
                               LEFT JOIN users
                               ON articles.author_id = users.id
-                              ORDER BY articles.date_created DESC";
+                              ORDER BY articles.date_created DESC
+                              LIMIT $limit OFFSET $offset";
 
                 if ($article_result = mysqli_query($conn, $article_query)) {
+                    $num_posts = mysqli_num_rows($article_result);
+                    
+                    //Get the total cound of articles
+                    $pagi_query = "SELECT COUNT(*) AS total FROM articles";
+                    $pagi_result = mysqli_query($conn, $pagi_query);
+                    $pagi_row = mysqli_fetch_array($pagi_result);
+                    $total_articles = $pagi_row["total"];
+
+                    $page_count = ceil($total_articles / $limit);
+                    // floor = round down
+                    // ceil =  round up
+                    // round = round down if below 5, round up if above 5
+                    echo "<nav aria-label='Page navigation example'> <ul class='pagination'>";
+
+                    if($current_page > 1) {
+                        echo "<li class='page-item'><a class='page-link' href='/articles.php?page=".($current_page - 1)."'>&laquo;</a></li>";
+                    }
+
+                    for($i = 1; $i <= $page_count; $i++) {
+                        echo "<li class='page-item";
+                        if($current_page == $i) echo " active";
+                        echo "'><a class='page-link' href='/articles.php?page=$i'>$i</a></li>";
+                    }
+                    
+                    if ($current_page < $page_count) {
+                        echo "<li class='page-item'><a class='page-link' href='/articles.php?page=".($current_page + 1)."'>&raquo;</a></li>";
+                    }
+
+                    echo "</ul> </nav>";
+                  
+
                     while ($article_row = mysqli_fetch_array($article_result)) {
                         ?>
                     <div class="card mb-3 col-12">
@@ -105,6 +152,10 @@ require_once("header.php");
         }
         ?>
     </div>
+    
+   <div class="col-12 pt-5 mt-5">
+       <button class="btn light-btn"><a href="/members.php">Back to Browse Profiles</a></button>
+   </div> 
 </div>
 
 

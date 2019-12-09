@@ -35,6 +35,19 @@ h4 {
     font-weight: 100;
 }
 
+h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+
 .white-line {
     margin-top: 80px;
     margin-bottom: 20px;
@@ -105,7 +118,7 @@ h4 {
     max-width: 230px;
     
     a {
-        color: white;
+        color: #454545;
         text-decoration: none;
     }
 
@@ -116,7 +129,9 @@ h4 {
 
 a {
     text-decoration: none;
+    color: #7e7e7e;
 }
+
 
 /**********
 NAV BAR
@@ -181,6 +196,10 @@ HERO BANNER
     max-width: 600px;
 }
 
+.med-container {
+    max-width: 800px;
+}
+
 /********
 FOOTER
 ********/
@@ -198,6 +217,9 @@ FOOTER
     color: rgb(157, 155, 155);
 }
 
+.icons:hover {
+    color:rgb(255, 255, 255)
+}
 
 /********
 TABS
