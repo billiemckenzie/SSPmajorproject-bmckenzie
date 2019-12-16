@@ -16,7 +16,7 @@ if ($user_request = mysqli_query($conn, $user_query)) :
         ?>
 
 
-        <div class="container">
+        <div class="container main-container">
             <div class="row">
                 <div class="col-4 pt-5 mt-5">
                     <img src="<?php echo $user_row['profile_pic'] ?>" class="w-100">
@@ -39,8 +39,8 @@ if ($user_request = mysqli_query($conn, $user_query)) :
                     <p>
                         Date user joined: <br>
                         <?php
-                            echo date("F jS, Y", strtotime($user_row["date_created"]));
-                        ?>
+                                echo date("F jS, Y", strtotime($user_row["date_created"]));
+                                ?>
                     </p>
                     <hr>
                     <?php
@@ -50,16 +50,55 @@ if ($user_request = mysqli_query($conn, $user_query)) :
                             <a href="/edit_profile.php?user_id=<?= $user_row["id"]; ?>" class="btn light-btn"> Edit Profile</a>
                         </div>
                     <?php
+
                             endif;
                             ?>
                 </div>
             </div>
-        </div>
+            <hr>
+            <div class="col-12 pt-5 mt-5">
+                <h1 class="mb-5 text-center">Browse Designs posted by <?php echo $user_row["first_name"]; ?></h1>
+            </div>
+            <?php
+                    if (isset($user_id)) {
 
-<?php
-    endwhile;
-else :
-    echo mysqli_error($conn);
-endif;
+                        $article_query = "SELECT articles.*,
+                                    images.url AS featured_image
+                                    FROM articles 
+                                    LEFT JOIN images
+                                    ON articles.image_id = images.id
+                                    WHERE articles.author_id = " . $user_id;
+                        if ($article_result = mysqli_query($conn, $article_query)) {
+                            while ($article_row = mysqli_fetch_array($article_result)) {
+                                ?>
+                                
+                        <div class="card mb-5 col-10 m-auto">
+                            <div class="row no-gutters pt-5 pb-0 pl-5">
+                                <div class="col-md-2">
+                                    <img class="card-img" src="<?= $article_row["featured_image"] ?>">
+                                </div>
+                                <div class="col-md-9 mb-5">
+                                    <div class="card-body ml-5">
+                                        <h5 class="card-title">
+                                            <a href="/articles.php?id=<?= $article_row["id"] ?>"><?= $article_row["title"] ?></a>
+                                        </h5>
+                                        <p>
+                                            <a href="/articles.php?id=<?= $article_row["id"] ?>">Read More</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-require_once("footer.php"); ?>
+            <?php
+                            }
+                        }
+                    }
+
+                    ?>
+        </div> <?php
+                    endwhile;
+                endif;
+                require_once("footer.php");
+
+                ?>

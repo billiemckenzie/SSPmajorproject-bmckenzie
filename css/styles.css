@@ -10565,6 +10565,10 @@ a.text-dark:hover, a.text-dark:focus {
 /**********
 SITE WIDE
 **********/
+.main-container {
+  min-height: calc(100vh - 173px);
+}
+
 p {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -10619,6 +10623,15 @@ h6 {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 0px;
+}
+
+.line {
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.sm-line {
+  max-width: 50px;
 }
 
 .text-danger {
@@ -10687,6 +10700,27 @@ h6 {
 a {
   text-decoration: none;
   color: #7e7e7e;
+}
+
+.align-center {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.big-icons {
+  font-size: 80px;
+}
+
+.big-icons a {
+  text-decoration: none;
+}
+
+.big-icons:hover {
+  color: #27302f;
+}
+
+.srch {
+  border: none;
 }
 
 /**********
@@ -10788,8 +10822,9 @@ TABS
   display: block;
 }
 
-.tabClicker .btn.active {
-  border-bottom: 4px solid black;
+.tabClicker.btn.active {
+  border-bottom: 2px solid black;
+  color: #3f6a6a;
 }
 
 .btn-text {
@@ -10825,5 +10860,22 @@ MEMBERS
   min-height: 100%;
   top: 0;
   left: 0;
+}
+
+/**********
+ARTICLES AND PAGINATION
+**********/
+.page-link {
+  color: #555555;
+}
+
+.page-link:hover {
+  color: #a9a9a9;
+}
+
+.page-item.active .page-link {
+  color: #fff;
+  background-color: #555555;
+  border-color: #555555;
 }
 /*# sourceMappingURL=styles.css.map */

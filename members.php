@@ -12,8 +12,9 @@ require_once("header.php");
                                             echo "Browse Designer Profiles";
                                         }
                                         ?></h1>
+            <p>See something you like? Click the designers name to view their full profile</p>
         </div>
-        <hr>
+        <hr class="pt-3 pb-3">
 
         <?php
         $users_query = "SELECT users.*, images.url AS profile_pic
@@ -23,7 +24,7 @@ require_once("header.php");
         $search = (isset($_GET["search"])) ? $_GET["search"] : false;
 
         $users_where_search = "";
-        
+
         if ($search) {
             $search_words = explode(" ", $search);
             //explode will seperate a string into an array
@@ -42,7 +43,7 @@ require_once("header.php");
         <div class="col-12 mb-5">
             <form action="/members.php" class="form-inline my-2 my-lg-0 pt-5 mt-5">
                 <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" value="<?php echo (isset($_GET["search"])) ? $_GET["search"] : ""; ?>">
-                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
 
@@ -72,6 +73,11 @@ require_once("header.php");
             echo mysqli_error($conn);
         }
         ?>
+
+        <div class="col pb-5 mb-5 pt-5 mt-5 text-center">
+            <h1>Check out the latest designs, posted by these designers</h1>
+            <button class="btn dark-btn mt-5"><a href="/articles.php">Browse Designs</a></button>
+        </div>
     </div>
 </div>
 

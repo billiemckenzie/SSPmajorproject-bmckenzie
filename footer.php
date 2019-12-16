@@ -1,6 +1,5 @@
-<footer class="pt-5 mt-5">
-  <div class="pt-5 mt-5"></div>
-  <div class="footer mt-2 p-3">
+<footer>
+  <div class="footer p-3 mt-5">
     <div class="container">
       <div class="row">
         <div class="col-4">

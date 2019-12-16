@@ -10,8 +10,8 @@ if ($user_request = mysqli_query($conn, $user_query)) :
         ?>
 
 
-        <div class="container">
-            <div class="row">
+        <div class="container main-container">
+            <div class="row mt-5 pt-5">
                 <div class="col-12">
                     <h1 class="pt-5 mb-5">Change <?php echo $user_row["first_name"] . " " . $user_row["last_name"]; ?>'s Password</h1>
                     <form action="/actions/edit_user.php" method="post">
@@ -24,7 +24,7 @@ if ($user_request = mysqli_query($conn, $user_query)) :
                                 <input type="password" name="password" placeholder="Current Password" class="form-control">
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row mt-3">
                             <div class="col">
                                 <input type="password" name="new_password" placeholder="New Password" class="form-control">
                             </div>
@@ -37,7 +37,7 @@ if ($user_request = mysqli_query($conn, $user_query)) :
                         ?>
                         <div class="text-right pt-5">
                             <a onclick= "history.go(-1);" href="#" class="text-link">Cancel</a>
-                            <button type="submit" tabindex="8" name="action" value="change_password" class="btn btn-secondary">Update Password</button>
+                            <button type="submit" tabindex="8" name="action" value="change_password" class="btn btn-secondary ml-5">Update Password</button>
                         </div>
                         <?php
                             endif;

@@ -7,6 +7,10 @@ $primary: #555555;
 SITE WIDE
 **********/
 
+.main-container {
+    min-height: calc(100vh - 173px)
+}
+
 p {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -62,6 +66,15 @@ h6 {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 0px;
+}
+
+.line {
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.sm-line {
+    max-width: 50px;
 }
 
 .text-danger {
@@ -132,6 +145,24 @@ a {
     color: #7e7e7e;
 }
 
+.align-center {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.big-icons {
+    font-size: 80px;
+    a {
+        text-decoration: none;
+    }
+}
+.big-icons:hover {
+    color:rgb(39, 48, 47)
+}
+
+.srch {
+    border: none;
+}
 
 /**********
 NAV BAR
@@ -237,8 +268,9 @@ TABS
     display: block;
 }
 
-.tabClicker .btn.active {
-    border-bottom: 4px solid rgb(0, 0, 0);
+.tabClicker.btn.active {
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: #3f6a6a;
 }
 
 .btn-text {
@@ -277,3 +309,24 @@ MEMBERS
         left: 0;
     }
 }
+
+/**********
+ARTICLES AND PAGINATION
+**********/
+
+.page-link {
+    color: #555555;
+}
+
+.page-link:hover {
+    color: #a9a9a9;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #555555;
+    border-color: #555555;
+}
+
+
+

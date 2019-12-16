@@ -111,7 +111,13 @@ require_once("header.php");
             </div>
             <button type="submit" class="btn btn-primary dark-btn mb-5 mt-3" name="action" value="signup">Sign Up</button>
         </form>
-        <hr class="mb-5">
+        <hr class="line">
+    </div>
+    <div>
+        <p>Already have an account?</p>
+    </div>
+    <div class="mb-5">
+        <button class="btn btn-secondary dark-btn mb-5"> <a href="/index.php">Log in</a></button>
     </div>
 </div>
 

@@ -55,9 +55,6 @@ require_once("conn.php");
           else : //if user is not logged in
             ?>
             <li class="nav-item">
-              <a class="nav-link" href="/index.php">Login</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/signup.php">Sign Up</a>
             </li>
           <?php

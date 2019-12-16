@@ -12,17 +12,15 @@ $user_query = "SELECT users.*, images.url AS profile_pic
 if ($user_request = mysqli_query($conn, $user_query)) :
     while ($user_row = mysqli_fetch_array($user_request)) :
         //print_r($user_row);
+
         ?>
 
 
-        <div class="container">
+        <div class="container main-container">
             <div class="row">
                 <div class="col-12">
                     <div class="row pt-5 mt-5 mb-5 pb-5">
-                        <div class="col-3 mb-5">
-                            <img src="<?php echo $user_row['profile_pic'] ?>" class="w-100">
-                        </div>
-                        <div class="col-9 pl-5">
+                        <div class="col-12 text-left pl-5">
                             <h1 class="pt-5 mb-5">Editing <?php echo $user_row["first_name"] . " " . $user_row["last_name"]; ?>'s Profile</h1>
                             <hr class="col-4 ml-0 mb-5">
                             <p>Keep your information up to date, so it's easier for people to find, and connect with you!</p>
@@ -36,6 +34,9 @@ if ($user_request = mysqli_query($conn, $user_query)) :
 
                         <div class="form-row mb-2">
                             <div class="col">
+                                <div class="col-4 text-center mb-5">
+                                    <img src="<?php echo $user_row['profile_pic'] ?>" class="w-100">
+                                </div>
                                 <div class="form-group">
                                     <label for="profile_pic">Profile Image</label>
                                     <input type="file" name="profile_pic" id="profile_pic" class="form-control">
