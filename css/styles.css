@@ -10719,6 +10719,18 @@ a {
   color: #27302f;
 }
 
+.sm-icons {
+  font-size: 40px;
+}
+
+.sm-icons a {
+  text-decoration: none;
+}
+
+.sm-icons:hover {
+  color: #27302f;
+}
+
 .srch {
   border: none;
 }
@@ -10734,13 +10746,11 @@ NAV BAR
   letter-spacing: 1px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
   opacity: 1;
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
   z-index: 999;
 }
 
 .navbar a:hover {
-  color: #ffffff;
+  color: #7e7c7c;
 }
 
 .navbar .dropdown-menu {
@@ -10757,6 +10767,10 @@ NAV BAR
 
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 2.5rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #949393;
 }
 
 /**********
@@ -10805,6 +10819,10 @@ FOOTER
 
 .icons:hover {
   color: white;
+}
+
+.blk-txt {
+  color: black;
 }
 
 /********
@@ -10878,4 +10896,8 @@ ARTICLES AND PAGINATION
   background-color: #555555;
   border-color: #555555;
 }
+
+/**********
+RESPONSIVE SIZING
+**********/
 /*# sourceMappingURL=styles.css.map */

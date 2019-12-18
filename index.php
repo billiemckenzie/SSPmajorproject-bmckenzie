@@ -33,7 +33,7 @@ if (isset($_SESSION["user_id"])) :
           </div>
         </div>
         <hr>
-        <div class="row d-flex mx-auto">
+        <div class="row m-5">
           <div class="col-md-3 m-4 text-center">
             <h1><a href="/members.php" class="big-icons"><i class="fas fa-users"></i></a></h1>
             <p>Browse Designer Profiles</p>
@@ -41,6 +41,10 @@ if (isset($_SESSION["user_id"])) :
           <div class="col-md-3 m-4 text-center">
             <h1><a href="/articles.php" class="big-icons"><i class="fas fa-palette"></i></a></h1>
             <p>Browse Designs</p>
+          </div>
+          <div class="col-md-3 m-4 text-center">
+            <h1><a href="/articles.php" class="big-icons"><i class="fas fa-sign-out-alt"></i></a></h1>
+            <p>Sign Out</p>
           </div>
         </div>
       </div>
@@ -101,7 +105,7 @@ if (isset($_SESSION["user_id"])) :
             <div>
               <img src="/images/ideas.jpg" class="med-img">
             </div>
-            <div class="col-6 ml-5">
+            <div class="col-md-6 ml-5">
               <h3 class="text-left">Browse Designer Profiles</h3>
               <hr class="dark-line">
               <p class="text-left">Browse through graphic designer profiles and start to refine your ideas, and see what inspires you.</p>
@@ -113,7 +117,7 @@ if (isset($_SESSION["user_id"])) :
             <div class="ml-5">
               <img src="/images/logosketch.jpg" class="med-img">
             </div>
-            <div class="col-6 ml-5">
+            <div class="col-md-6 ml-5">
               <h3 class="text-left">Collaborate</h3>
               <hr class="dark-line">
               <p class="text-left">Start by creating a simple brief to help designers understand your project and ideas. This can help you find the right designer that matches you style.</p>
@@ -125,7 +129,7 @@ if (isset($_SESSION["user_id"])) :
             <div class="ml-5">
               <img src="/images/success.jpeg" class="med-img">
             </div>
-            <div class="col-5 ml-1">
+            <div class="col-md-5 ml-1">
               <h3 class="text-left">Choose a Designer!</h3>
               <hr class="dark-line">
               <p class="text-left">Once you find the right designer for your project, choose your artist and have them bring your ideas to life!</p>

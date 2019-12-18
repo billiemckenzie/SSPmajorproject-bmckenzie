@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-4">
-          <img class="small-img" src="/images/1design_logo@2x.png">
+          <a href="/index.php"><img class="small-img" src="/images/1design_white@2x.png"></a>
         </div>
-        <div class="col-4 text-center text-white mt-3">
-          <p class="footer-text">Design makes anything possible.</p>
+        <div class="col-4 text-center mt-3">
+          <p class="footer-text blk-text">Design makes anything possible.</p>
         </div>
         <div class="col-4 mt-2">
           <p class="text-right">
