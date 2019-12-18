@@ -3,8 +3,8 @@ require_once("header.php");
 ?>
 
 
+<div class="container main-container">
 <?php
-
 if (isset($_GET["id"])) {
 
     $article_query = "SELECT articles.*, 
@@ -20,7 +20,7 @@ if (isset($_GET["id"])) {
         while ($article_row = mysqli_fetch_array($article_result)) {
             //print_r($article_row);
             ?>
-            <div class="container main-container">
+            <div class="container">
                 <div class="row">
                     <div class="col-6 pt-5 mt-5">
                         <h5><?= $article_row["title"] ?></h5>
@@ -36,7 +36,7 @@ if (isset($_GET["id"])) {
                         </figure>
                     </div>
                 </div>
-                <div class="container pt-5 col m-auto">
+                <div class="container col m-auto">
                     <div class="row">
                         <button class="btn dark-btn mr-5"><a href="/articles.php">Back to Browse Designs</a></button>
                         <button class="btn light-btn ml-5"><a href="/members.php">Back to Browse Profiles</a></button>
@@ -47,7 +47,7 @@ if (isset($_GET["id"])) {
                 //If logged in and the post is yours or you are super admin
                 // show edit menu
                 if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] == $article_row["author_id"]) {
-                    echo "<div class='container pt-5'>";
+                    echo "<div class='container mt-5'>";
                     echo "<a href='edit_post.php?article_id=" . $article_row["id"] . "' class='btn light-btn'>Edit Article</a>";
                     echo "</div>";
                 }
@@ -117,7 +117,7 @@ if (isset($_GET["id"])) {
                     while ($article_row = mysqli_fetch_array($article_result)) {
                         ?>
 
-                    <div class="card mb-3 col-10 m-auto">
+                    <div class="card mb-5 col-10 m-auto">
                         <div class="row no-gutters p-5">
                             <div class="col-md-3">
                                 <a href="/articles.php?id=<?= $article_row["id"] ?>">
@@ -150,13 +150,8 @@ if (isset($_GET["id"])) {
         ?>
         </div>
     </div>
-    <div class="container mb-5 mt-5">
-        <div class="col text-center">
-            <button class="btn dark-btn mt-5 mb-5"><a href="/members.php">Back to Browse Profiles</a></button>
-        </div>
+
     </div>
-
-
     <?php
     require_once("footer.php");
     ?>

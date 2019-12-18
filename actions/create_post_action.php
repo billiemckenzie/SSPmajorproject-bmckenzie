@@ -14,7 +14,7 @@ session_start();
 if( isset($_SESSION["user_id"]) && ($_SESSION["role"] < 3 )):
     //get the current user by session id
     $user_id      = $_SESSION["user_id"];
-    $title        = htmlspecialchars($_POST["title"],ENT_QUOTES);
+    $title        = htmlspecialchars($_POST["title"], ENT_QUOTES);
     $content      = htmlspecialchars($_POST["content"], ENT_QUOTES);
     $date_created = date("Y-m-d H:i:s");
 

@@ -76,11 +76,14 @@ require_once("header.php");
         }
         ?>
 
-        <div class="row">
-            <div class="col-12 text-left pb-5 mb-5 pt-5 mt-5">
-                <h1>Check out the latest designs, <br>posted by these designers</h1>
-                <button class="btn dark-btn mt-5"><a href="/articles.php">Browse Designs</a></button>
-            </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col text-left pb-5 mb-5 pt-5 mt-5">
+            <h1>Check out the latest designs, <br>posted by these designers</h1>
+            <button class="btn dark-btn mt-5"><a href="/articles.php">Browse Designs</a></button>
         </div>
     </div>
 </div>

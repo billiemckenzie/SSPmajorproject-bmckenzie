@@ -14,6 +14,8 @@ if (isset($_SESSION["user_id"])) :
       echo $user_row["first_name"];
       echo "!</h2>";
 ?>
+
+      <div class="main-container">
       <div class="text-center">
         <p class="mb-5">What would you like to do today?</p>
         <hr class="sm-line">
@@ -48,6 +50,7 @@ if (isset($_SESSION["user_id"])) :
         <form action="/actions/login.php" method="post">
           <button type="submit" name="action" value="logout" class="btn btn-outline-secondary dark-btn mb-5">Log Out</button>
         </form>
+      </div>
       </div>
   <?php
       echo "</div>";
