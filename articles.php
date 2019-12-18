@@ -120,7 +120,9 @@ if (isset($_GET["id"])) {
                     <div class="card mb-3 col-10 m-auto">
                         <div class="row no-gutters p-5">
                             <div class="col-md-3">
-                                <img class="card-img" src="<?= $article_row["featured_image"] ?>">
+                                <a href="/articles.php?id=<?= $article_row["id"] ?>">
+                                    <img class="card-img" src="<?= $article_row["featured_image"] ?>">
+                                </a>
                             </div>
                             <div class="col-md-9">
                                 <div class="card-body ml-5">
@@ -149,7 +151,7 @@ if (isset($_GET["id"])) {
         </div>
     </div>
     <div class="container mb-5 mt-5">
-        <div class="col text-left">
+        <div class="col text-center">
             <button class="btn dark-btn mt-5 mb-5"><a href="/members.php">Back to Browse Profiles</a></button>
         </div>
     </div>

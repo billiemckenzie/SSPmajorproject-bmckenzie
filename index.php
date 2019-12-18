@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) :
       echo "<h2 class='pt-5 text-center'>Welcome Back ";
       echo $user_row["first_name"];
       echo "!</h2>";
-      ?>
+?>
       <div class="text-center">
         <p class="mb-5">What would you like to do today?</p>
         <hr class="sm-line">
@@ -42,10 +42,6 @@ if (isset($_SESSION["user_id"])) :
             <h1><a href="/articles.php" class="big-icons"><i class="fas fa-palette"></i></a></h1>
             <p>Browse Designs</p>
           </div>
-          <div class="col-md-3 m-4 text-center">
-            <h1><a href="/articles.php" class="big-icons"><i class="fas fa-sign-out-alt"></i></a></h1>
-            <p>Sign Out</p>
-          </div>
         </div>
       </div>
       <div class="pt-5 mt-5 text-right">
@@ -54,11 +50,11 @@ if (isset($_SESSION["user_id"])) :
         </form>
       </div>
   <?php
-        echo "</div>";
-      endwhile;
-    endif;
-  else :
-    ?>
+      echo "</div>";
+    endwhile;
+  endif;
+else :
+  ?>
 
   <div class="hero-banner">
     <div class="col sm-container m-auto pt-5">

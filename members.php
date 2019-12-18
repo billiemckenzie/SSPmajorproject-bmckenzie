@@ -50,12 +50,14 @@ require_once("header.php");
         <?php
         if ($users_result = mysqli_query($conn, $users_query)) {
             while ($user_row = mysqli_fetch_array($users_result)) {
-                ?>
+        ?>
 
                 <div class="col-md-3 pt-5">
                     <div class="card">
                         <div class="square-img">
-                            <img src="<?php echo $user_row['profile_pic'] ?>" class="card-img-top">
+                            <a href="/profile.php?user_id=<?= $user_row["id"]; ?>">
+                                <img src="<?php echo $user_row['profile_pic'] ?>" class="card-img-top">
+                            </a>
                         </div>
                         <div class="card-header">
                             <h6 class="pt-5">
@@ -74,9 +76,11 @@ require_once("header.php");
         }
         ?>
 
-        <div class="col pb-5 mb-5 pt-5 mt-5 text-center">
-            <h1>Check out the latest designs, posted by these designers</h1>
-            <button class="btn dark-btn mt-5"><a href="/articles.php">Browse Designs</a></button>
+        <div class="row">
+            <div class="col-12 text-left pb-5 mb-5 pt-5 mt-5">
+                <h1>Check out the latest designs, <br>posted by these designers</h1>
+                <button class="btn dark-btn mt-5"><a href="/articles.php">Browse Designs</a></button>
+            </div>
         </div>
     </div>
 </div>
